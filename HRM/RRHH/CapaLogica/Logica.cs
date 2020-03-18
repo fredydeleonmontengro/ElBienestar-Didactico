@@ -37,6 +37,12 @@ namespace CapaLogica
 
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        public OdbcDataReader Insertarnomina(string sCodigo, string sTiponomina, string sFechainicio, string sfechafin, string sCodigoemp, string sobservaciones, string ssaldototal)
+        {
+            return sn.Insertarnomina(sCodigo, sTiponomina, sFechainicio, sfechafin, sCodigoemp, sobservaciones, ssaldototal);
+          
+
+        }
     }
 }
 

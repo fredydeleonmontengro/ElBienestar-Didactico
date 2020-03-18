@@ -1,8 +1,10 @@
 ﻿using CapaDiseño.Consulta;
+using CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ namespace CapaDiseño.Procesos
 {
     public partial class Frm_Nomina : Form
     {
+
+       Logica logic = new Logica();
         public Frm_Nomina()
         {
             InitializeComponent();
@@ -46,5 +50,17 @@ namespace CapaDiseño.Procesos
 
             }
         }
+
+        private void Btn_generarnomina_Click(object sender, EventArgs e)
+        {
+
+            double deducciones = Convert.ToDouble(Txt_SubtotalDeducciones.Text);
+            double percepciones =Convert.ToDouble(Txt_SubtotalPercepciones.Text);
+            double total = (deducciones - percepciones);
+            Txt_saldonominal.Text = Convert.ToString(total);
+            OdbcDataReader cita = logic.Insertarnomina(Txt_CodEncabezado.Text,Txt_tiponomina.Text, Dtp_fechainicio.Text, Dtp_fechafin.Text, Txt_codempleado.Text, Txt_Observaciones.Text, Txt_saldonominal.Text);
+            MessageBox.Show("Datos registrados.");
+
         }
+    }
 }

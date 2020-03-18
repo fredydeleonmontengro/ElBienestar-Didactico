@@ -35,9 +35,9 @@
             this.lbl_procesonominal = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.Gpb_nominaencabezado = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_saldonominal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Observaciones = new System.Windows.Forms.TextBox();
             this.lbl_observaciones = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Txt_codempleado = new System.Windows.Forms.TextBox();
@@ -126,9 +126,9 @@
             // 
             // Gpb_nominaencabezado
             // 
-            this.Gpb_nominaencabezado.Controls.Add(this.textBox2);
+            this.Gpb_nominaencabezado.Controls.Add(this.Txt_saldonominal);
             this.Gpb_nominaencabezado.Controls.Add(this.label2);
-            this.Gpb_nominaencabezado.Controls.Add(this.textBox1);
+            this.Gpb_nominaencabezado.Controls.Add(this.Txt_Observaciones);
             this.Gpb_nominaencabezado.Controls.Add(this.lbl_observaciones);
             this.Gpb_nominaencabezado.Controls.Add(this.button1);
             this.Gpb_nominaencabezado.Controls.Add(this.Txt_codempleado);
@@ -149,12 +149,12 @@
             this.Gpb_nominaencabezado.TabStop = false;
             this.Gpb_nominaencabezado.Text = "Encabezado Nomina";
             // 
-            // textBox2
+            // Txt_saldonominal
             // 
-            this.textBox2.Location = new System.Drawing.Point(789, 134);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 27);
-            this.textBox2.TabIndex = 14;
+            this.Txt_saldonominal.Location = new System.Drawing.Point(789, 134);
+            this.Txt_saldonominal.Name = "Txt_saldonominal";
+            this.Txt_saldonominal.Size = new System.Drawing.Size(132, 27);
+            this.Txt_saldonominal.TabIndex = 14;
             // 
             // label2
             // 
@@ -165,12 +165,12 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Saldo Nominal:";
             // 
-            // textBox1
+            // Txt_Observaciones
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 27);
-            this.textBox1.TabIndex = 12;
+            this.Txt_Observaciones.Location = new System.Drawing.Point(178, 141);
+            this.Txt_Observaciones.Name = "Txt_Observaciones";
+            this.Txt_Observaciones.Size = new System.Drawing.Size(320, 27);
+            this.Txt_Observaciones.TabIndex = 12;
             // 
             // lbl_observaciones
             // 
@@ -353,6 +353,7 @@
             this.btn_generarnomina.TabIndex = 8;
             this.btn_generarnomina.Text = "Generar Nomina";
             this.btn_generarnomina.UseVisualStyleBackColor = false;
+            this.btn_generarnomina.Click += new System.EventHandler(this.Btn_generarnomina_Click);
             // 
             // Frm_Nomina
             // 
@@ -391,9 +392,9 @@
         private System.Windows.Forms.Label lbl_procesonominal;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.GroupBox Gpb_nominaencabezado;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_saldonominal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Observaciones;
         private System.Windows.Forms.Label lbl_observaciones;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Txt_codempleado;
