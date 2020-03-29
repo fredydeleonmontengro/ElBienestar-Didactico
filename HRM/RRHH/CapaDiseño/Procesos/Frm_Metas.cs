@@ -36,7 +36,24 @@ namespace Metas
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Por el momento se encuentra en desarollo");
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("22");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)

@@ -24,14 +24,14 @@ namespace CapaDiseño.Consulta
             try
             {
                 Conexion conexion = new Conexion();
-                string consultaMostrar = "SELECT * FROM mediodecomunicacion WHERE estado='1';";
+                string consultaMostrar = "SELECT * FROM tipocontratacion WHERE estado='1';";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, conexion.conexionbd());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
                 while (mostrarDatos.Read())
                 {
                     Dgv_consultaContratacion.Refresh();
-                    Dgv_consultaContratacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5));
+                    Dgv_consultaContratacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4));
                 }
                 comm.Connection.Close();
                 mostrarDatos.Close();

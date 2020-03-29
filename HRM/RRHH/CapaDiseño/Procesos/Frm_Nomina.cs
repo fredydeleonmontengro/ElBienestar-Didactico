@@ -23,7 +23,17 @@ namespace CapaDiseño.Procesos
         string slocalIP;
         string smacAddresses;
         string suser;
-          
+        public void hackeardatos()
+
+        {
+            foreach (DataGridViewRow row in Dgv_empleadoscontables.Rows)
+            {
+                string columna1 = Convert.ToString(row.Cells["Column4"].Value);
+                string columna2 = Convert.ToString(row.Cells["Column8"].Value);
+                OdbcDataReader cita = logic.detallepoliza(columna1, columna2);
+
+            }
+        }
         public void obtenerip()
         {
             IPHostEntry host;
@@ -45,17 +55,7 @@ namespace CapaDiseño.Procesos
                 }
             }
         }
-        public void hackeardatos()
 
-        {
-            foreach (DataGridViewRow row in Dgv_empleadoscontables.Rows)
-            {
-                textBox1.Text = Convert.ToString(row.Cells["Column4"].Value);
-                textBox2.Text = Convert.ToString(row.Cells["Column8"].Value);
-                OdbcDataReader cita = logic.detallepoliza(textBox1.Text, textBox2.Text);
-
-            }
-        }
         public Frm_Nomina(String susuario)
         {
             InitializeComponent();
@@ -164,7 +164,24 @@ namespace CapaDiseño.Procesos
 
         private void Btn_Ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Por el momento se encuentra en desarollo");
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("23");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
         }
 
         private void Button1_Click(object sender, EventArgs e)

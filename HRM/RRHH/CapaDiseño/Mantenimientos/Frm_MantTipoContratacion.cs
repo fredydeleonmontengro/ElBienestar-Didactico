@@ -79,7 +79,24 @@ namespace CapaDiseño.Mantenimientos
 
         private void Btn_Ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Por el momento se encuentra en desarollo");
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("15");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
@@ -129,6 +146,20 @@ namespace CapaDiseño.Mantenimientos
         {
             Frm_TipoContratacion concep = new Frm_TipoContratacion();
             concep.ShowDialog();
+            if (concep.DialogResult == DialogResult.OK)
+            {
+                Txt_Codigo.Text = concep.Dgv_consultaContratacion.Rows[concep.Dgv_consultaContratacion.CurrentRow.Index].
+                      Cells[0].Value.ToString();
+                Cbo_Contrato.Text = concep.Dgv_consultaContratacion.Rows[concep.Dgv_consultaContratacion.CurrentRow.Index].
+                      Cells[1].Value.ToString();
+                Cbo_Mes.Text = concep.Dgv_consultaContratacion.Rows[concep.Dgv_consultaContratacion.CurrentRow.Index].
+                      Cells[2].Value.ToString();
+                Cbo_Proyecto.Text = concep.Dgv_consultaContratacion.Rows[concep.Dgv_consultaContratacion.CurrentRow.Index].
+                      Cells[3].Value.ToString();
+                comboBox3.Text = concep.Dgv_consultaContratacion.Rows[concep.Dgv_consultaContratacion.CurrentRow.Index].
+                      Cells[4].Value.ToString();
+
+            }
         }
     }
 }

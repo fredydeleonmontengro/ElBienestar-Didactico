@@ -23,14 +23,18 @@ namespace CapaDiseño.Procesos
             InitializeComponent();
         }
         Logica logic = new Logica();
+
+        string sueldo;
+        string conceptos;
+        string resultados;
         public void Guardar()
 
         {
         
-        string fechainicial = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-        string fechafinal = dateTimePicker3.Value.ToString("yyyy-MM-dd");
-            string codigopoliza = Convert.ToString(textBox1.Text);
-            string codigonomina = Convert.ToString(textBox3.Text);
+               string fechainicial = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+               string fechafinal = dateTimePicker3.Value.ToString("yyyy-MM-dd");
+               string codigopoliza = Convert.ToString(Txt_numeropoliza.Text);
+               string codigonomina = Convert.ToString(Txt_numeronomina.Text);
 
        OdbcDataReader cita = logic.Guardarpoliza(codigopoliza, codigonomina, fechainicial, fechafinal);
        
@@ -106,15 +110,15 @@ namespace CapaDiseño.Procesos
             
 
 
-            Dgv_poliza.Rows.Add("SUELDOS", textBox6.Text);
+            Dgv_poliza.Rows.Add("SUELDOS", sueldo);
         }
         public void sueldocalculo()
         {
             int resta;
             int suma;
-            resta = int.Parse(textBox4.Text) - int.Parse(textBox5.Text) ;
-            textBox6.Text = resta.ToString();
-            suma = int.Parse(textBox6.Text) + int.Parse(textBox5.Text);
+            resta = int.Parse(conceptos) - int.Parse(resultados) ;
+            sueldo = resta.ToString();
+            suma = int.Parse(sueldo) + int.Parse(resultados);
            
             Dgv_poliza.Rows.Add("BANCOS", "", suma.ToString());
 
@@ -128,8 +132,8 @@ namespace CapaDiseño.Procesos
             {
                 while (mostrarEmpleado.Read())
                 {
-                   
-                    textBox5.Text = mostrarEmpleado.GetString(0);
+
+                    resultados = mostrarEmpleado.GetString(0);
                 }
             }
             catch (Exception err)
@@ -147,9 +151,9 @@ namespace CapaDiseño.Procesos
             {
                 while (mostrarEmpleado.Read())
                 {
-                    textBox1.Text = mostrarEmpleado.GetString(0);
-                    textBox3.Text = mostrarEmpleado.GetString(0);
-                    textBox4.Text= mostrarEmpleado.GetString(1);
+                    Txt_numeropoliza.Text = mostrarEmpleado.GetString(0);
+                    Txt_numeronomina.Text = mostrarEmpleado.GetString(0);
+                    conceptos = mostrarEmpleado.GetString(1);
                 }
             }
             catch (Exception err)
@@ -263,10 +267,10 @@ namespace CapaDiseño.Procesos
            
              foreach (DataGridViewRow row in Dgv_poliza.Rows)
             {
-                textBox9.Text = Convert.ToString(row.Cells["Column1"].Value);
-                textBox7.Text = Convert.ToString(row.Cells["Column2"].Value);
-                textBox8.Text = Convert.ToString(row.Cells["Column3"].Value);
-                OdbcDataReader cita = logic.detallepolizass(textBox9.Text,textBox7.Text,textBox8.Text);
+                string scuentas = Convert.ToString(row.Cells["Column1"].Value);
+                string sdebe = Convert.ToString(row.Cells["Column2"].Value);
+                string shaber = Convert.ToString(row.Cells["Column3"].Value);
+                OdbcDataReader cita = logic.detallepolizass(scuentas,sdebe, shaber);
 
 
 

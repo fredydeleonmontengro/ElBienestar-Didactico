@@ -40,11 +40,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Txt_numeronomina = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_tipo = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_numeropoliza = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,13 +54,7 @@
             this.lbl_procesonominal = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.LBLTOTAL = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -179,11 +173,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.Txt_numeronomina);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Txt_tipo);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Txt_numeropoliza);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -195,13 +189,13 @@
             this.groupBox1.Text = "DATOS DE POLIZA";
             this.groupBox1.UseWaitCursor = true;
             // 
-            // textBox3
+            // Txt_numeronomina
             // 
-            this.textBox3.Location = new System.Drawing.Point(105, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 40;
-            this.textBox3.UseWaitCursor = true;
+            this.Txt_numeronomina.Location = new System.Drawing.Point(105, 102);
+            this.Txt_numeronomina.Name = "Txt_numeronomina";
+            this.Txt_numeronomina.Size = new System.Drawing.Size(100, 20);
+            this.Txt_numeronomina.TabIndex = 40;
+            this.Txt_numeronomina.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -213,14 +207,14 @@
             this.label4.Text = "NO. NOMINA";
             this.label4.UseWaitCursor = true;
             // 
-            // textBox2
+            // Txt_tipo
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 39;
-            this.textBox2.Text = "NOMINA";
-            this.textBox2.UseWaitCursor = true;
+            this.Txt_tipo.Location = new System.Drawing.Point(105, 76);
+            this.Txt_tipo.Name = "Txt_tipo";
+            this.Txt_tipo.Size = new System.Drawing.Size(200, 20);
+            this.Txt_tipo.TabIndex = 39;
+            this.Txt_tipo.Text = "NOMINA";
+            this.Txt_tipo.UseWaitCursor = true;
             // 
             // dateTimePicker1
             // 
@@ -230,13 +224,13 @@
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.UseWaitCursor = true;
             // 
-            // textBox1
+            // Txt_numeropoliza
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.UseWaitCursor = true;
+            this.Txt_numeropoliza.Location = new System.Drawing.Point(105, 25);
+            this.Txt_numeropoliza.Name = "Txt_numeropoliza";
+            this.Txt_numeropoliza.Size = new System.Drawing.Size(100, 20);
+            this.Txt_numeropoliza.TabIndex = 4;
+            this.Txt_numeropoliza.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -342,46 +336,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(467, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 55;
-            this.textBox4.Visible = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(582, 192);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 56;
-            this.textBox5.Visible = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(688, 196);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 57;
-            this.textBox6.Visible = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(667, 423);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(114, 20);
-            this.textBox7.TabIndex = 58;
-            this.textBox7.Visible = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(667, 446);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(119, 20);
-            this.textBox8.TabIndex = 59;
-            this.textBox8.Visible = false;
-            // 
             // LBLTOTAL
             // 
             this.LBLTOTAL.AutoSize = true;
@@ -390,14 +344,6 @@
             this.LBLTOTAL.Size = new System.Drawing.Size(94, 13);
             this.LBLTOTAL.TabIndex = 60;
             this.LBLTOTAL.Text = "SUMAS IGUALES";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(516, 443);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(145, 20);
-            this.textBox9.TabIndex = 61;
-            this.textBox9.Visible = false;
             // 
             // textBox10
             // 
@@ -431,13 +377,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.LBLTOTAL);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Gpb_Detallenominal);
             this.Controls.Add(this.groupBox2);
@@ -472,11 +412,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txt_numeronomina;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_tipo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_numeropoliza;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -486,13 +426,7 @@
         private System.Windows.Forms.Label lbl_procesonominal;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label LBLTOTAL;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Button button2;

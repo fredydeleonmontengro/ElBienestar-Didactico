@@ -51,7 +51,7 @@ namespace CapaDiseño.Mantenimientos
             InitializeComponent();
             obtenerip();
             suser = susuario;
-
+            Txt_Cod.Enabled = false;
             Txt_PrimerApellido.Enabled = false;
             Txt_SegundoNombre.Enabled = false;
             Txt_PrimerApellido.Enabled = false;
@@ -59,6 +59,7 @@ namespace CapaDiseño.Mantenimientos
             Txt_Telefono.Enabled = false;
             Txt_Celular.Enabled = false;
             Txt_email.Enabled = false;
+            Txt_Nit.Enabled = false;
             Txt_Direccion.Enabled = false;
         }
 
@@ -114,7 +115,24 @@ namespace CapaDiseño.Mantenimientos
 
         private void Btn_Ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Por el momento se encuentra en desarollo");
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("7");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
@@ -124,6 +142,7 @@ namespace CapaDiseño.Mantenimientos
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            Txt_Cod.Enabled = true;
             Txt_PrimerApellido.Enabled = true;
             Txt_SegundoNombre.Enabled = true;
             Txt_PrimerApellido.Enabled = true;
@@ -131,12 +150,13 @@ namespace CapaDiseño.Mantenimientos
             Txt_Telefono.Enabled = true;
             Txt_Celular.Enabled = true;
             Txt_email.Enabled = true;
+            Txt_Nit.Enabled = true;
             Txt_Direccion.Enabled = true;
         }
 
         public void PicActualizar_Click(object sender, EventArgs e)
         {
-            OdbcDataReader cita = logic.ModificarEmpleado(Txt_Cod.Text,Txt_PrimerApellido.Text,Txt_SegundoNombre.Text,Txt_PrimerApellido.Text,TxtSegundoApellido.Text,Txt_Telefono.Text,Txt_Celular.Text,Txt_email.Text,Txt_Direccion.Text,Cbo_estado.Text);
+            OdbcDataReader cita = logic.ModificarEmpleado(Txt_Cod.Text,Txt_PrimerApellido.Text,Txt_SegundoNombre.Text,Txt_PrimerApellido.Text,TxtSegundoApellido.Text,Txt_Telefono.Text,Txt_Celular.Text,Txt_email.Text,Txt_Direccion.Text,Txt_Nit.Text,Cbo_estado.Text);
             MessageBox.Show("Datos modificados correctamente.");
             logic.bitacora("0", slocalIP, smacAddresses, suser, "RRHH", DateTime.Now.ToString("G"), "Modificar", this.GetType().Name);
 
@@ -144,7 +164,7 @@ namespace CapaDiseño.Mantenimientos
 
         private void Pic_Guardar_Click(object sender, EventArgs e)
         {
-            OdbcDataReader cita = logic.Insertarempleado(Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text, Cbo_estado.Text);
+            OdbcDataReader cita = logic.Insertarempleado(Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text,Txt_Nit.Text ,Cbo_estado.Text);
             MessageBox.Show("Datos Insertados");
             logic.bitacora("0", slocalIP, smacAddresses, suser, "RRHH", DateTime.Now.ToString("G"), "Guardar", this.GetType().Name);
 
@@ -180,14 +200,14 @@ namespace CapaDiseño.Mantenimientos
 
         private void Btn_editar_Click(object sender, EventArgs e)
         {
-            OdbcDataReader cita = logic.ModificarEmpleado(Txt_Cod.Text, Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text, Cbo_estado.Text);
+            OdbcDataReader cita = logic.ModificarEmpleado(Txt_Cod.Text, Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text,Txt_Nit.Text ,Cbo_estado.Text);
             MessageBox.Show("Datos modificados correctamente.");
             logic.bitacora("0", slocalIP, smacAddresses, suser, "RRHH", DateTime.Now.ToString("G"), "Modificar", this.GetType().Name);
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            OdbcDataReader cita = logic.Insertarempleado(Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text, Cbo_estado.Text);
+            OdbcDataReader cita = logic.Insertarempleado(Txt_PrimerApellido.Text, Txt_SegundoNombre.Text, Txt_PrimerApellido.Text, TxtSegundoApellido.Text, Txt_Telefono.Text, Txt_Celular.Text, Txt_email.Text, Txt_Direccion.Text, Txt_Nit.Text ,Cbo_estado.Text);
             MessageBox.Show("Datos Insertados");
             logic.bitacora("0", slocalIP, smacAddresses, suser, "RRHH", DateTime.Now.ToString("G"), "Guardar", this.GetType().Name);
 
@@ -204,6 +224,34 @@ namespace CapaDiseño.Mantenimientos
         {
             Frm_consultaEmpleado concep = new Frm_consultaEmpleado();
             concep.ShowDialog();
+            if (concep.DialogResult == DialogResult.OK)
+            {
+                Txt_Cod.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[0].Value.ToString();
+                Txt_PrimerNombre.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[1].Value.ToString();
+                Txt_SegundoNombre.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[2].Value.ToString();
+                Txt_PrimerApellido.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[3].Value.ToString();
+                TxtSegundoApellido.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[4].Value.ToString();
+                Txt_Telefono.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                     Cells[5].Value.ToString();
+                Txt_Celular.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[6].Value.ToString();
+                Txt_email.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[7].Value.ToString();
+                Txt_Direccion.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[8].Value.ToString();
+                string emp1 = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[9].Value.ToString();
+                Txt_Nit.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                Cells[10].Value.ToString();
+                Cbo_estado.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
+                      Cells[11].Value.ToString();
+
+            }
         }
 
         private void Cbo_estado_SelectedIndexChanged(object sender, EventArgs e)

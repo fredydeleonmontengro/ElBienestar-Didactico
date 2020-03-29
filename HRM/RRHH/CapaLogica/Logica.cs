@@ -19,12 +19,6 @@ namespace CapaLogica
         {
             return sn.Insertarconcepto(sCodigo, sNombre, sTipoconcepto, ssaldo, stipoaccion, sestado);
         }
-
-        public OdbcDataReader Guardarpoliza(double codigopoliza, double codigonomina, string fechainicial, string fechafinal)
-        {
-            throw new NotImplementedException();
-        }
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
         //------------------------------------------------------------------------------------------------------UPDATE-------------------------------------------------------//
         public OdbcDataReader modificarConcepto(string sCodigo, string sNombre, string sTipoconcepto, string ssaldo, string stipoaccion, string sestado)
@@ -93,15 +87,15 @@ namespace CapaLogica
         }
         /*FIN DE INSERTAR BANCO*/
         //------------------------------------------------------------------------------------------------------INSERTEMPLEADO--------//
-        public OdbcDataReader Insertarempleado(string Pnombre, string Snombre, string Papellido, string Sapellido, string telefono, string celular, string email, string direccion, string Eestado)
+        public OdbcDataReader Insertarempleado(string Pnombre, string Snombre, string Papellido, string Sapellido, string telefono, string celular, string email, string direccion, string Nit,string Eestado)
         {
-            return sn.InsertarEmp(Pnombre, Snombre, Papellido, Sapellido, telefono, celular, email, direccion, Eestado);
+            return sn.InsertarEmp(Pnombre, Snombre, Papellido, Sapellido, telefono, celular, email, direccion,Nit ,Eestado);
         }
         //---------------------------------------------------------------------------------------------------------------------------//
         //------------------------------------------------------------------------------------------------------UPDATE EMPLEADO------//
-        public OdbcDataReader ModificarEmpleado(string Cod, string Pnombre, string Snombre, string Papellido, string Sapellido, string telefono, string celular, string email, string direccion, string Eestado)
+        public OdbcDataReader ModificarEmpleado(string Cod, string Pnombre, string Snombre, string Papellido, string Sapellido, string telefono, string celular, string email, string direccion,string Nit ,string Eestado)
         {
-            return sn.UpdateEmp(Cod, Pnombre, Snombre, Papellido, Sapellido, telefono, celular, email, direccion, Eestado);
+            return sn.UpdateEmp(Cod, Pnombre, Snombre, Papellido, Sapellido, telefono, celular, email, direccion, Nit,Eestado);
         }
         //--------------------------------------------------------------------------------------------------------------------------//
         //----------------------------------------------------------------------------------------------ELIMINAR EMPLEADO----------//
@@ -354,6 +348,11 @@ namespace CapaLogica
         {
             return sn.consultarestado(estado);
         }
+
+        public OdbcDataReader consultaayuda(string id)
+        {
+            return sn.consultaayudas(id);
+        }
         public OdbcDataReader Insertarcuenta(string sCodigocuenta, string scuenta, string smonto)
         {
             return sn.Insertarcuentas(sCodigocuenta, scuenta, smonto);
@@ -376,7 +375,7 @@ namespace CapaLogica
         }
         public OdbcDataReader rellenocuentascontables()
         {
-            return sn.rellenocuentas();
+            return sn.Rellenocuentas();
         }
         public OdbcDataReader consultanomas()
         {
@@ -398,7 +397,7 @@ namespace CapaLogica
 
         public OdbcDataReader Guardarpoliza(string codigopoliza, string codigonomina, string fechainicial, string fechafinal)
         {
-            return sn.Insertarpoliza(codigopoliza, codigonomina , fechainicial, fechafinal);
+            return sn.Insertarpoliza(codigopoliza, codigonomina, fechainicial, fechafinal);
         }
 
     }

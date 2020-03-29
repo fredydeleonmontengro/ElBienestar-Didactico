@@ -70,8 +70,29 @@ namespace CapaDiseño.Mantenimientos
 
         private void Btn_Ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Por el momento se encuentra en desarollo");
+            string ruta="";
+            string indice="";
+          
+                OdbcDataReader mostrarEmpleado = logic.consultaayuda("1");
+                try
+                {
+                    while (mostrarEmpleado.Read())
+                    {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                    }
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
+
+              Help.ShowHelp(this, ruta, indice);
+           
+
         }
+
+
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {

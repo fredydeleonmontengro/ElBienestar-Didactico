@@ -27,7 +27,7 @@ namespace CapaDiseño.Consulta
                 while (mostrarDatos.Read())
                 {
                     Dgv_consultaMedios.Refresh();
-                    Dgv_consultaMedios.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5));
+                    Dgv_consultaMedios.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4));
                 }
                 comm.Connection.Close();
                 mostrarDatos.Close();

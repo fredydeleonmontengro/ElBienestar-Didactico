@@ -144,6 +144,28 @@ namespace CapaDiseño.Procesos
                 MessageBox.Show("No se han seleccionado candidatos, por favor seleccionelos.");
             
         }
+
+        private void Btn_Ayuda_Click(object sender, EventArgs e)
+        {
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("20");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
+        }
     }
 }
 

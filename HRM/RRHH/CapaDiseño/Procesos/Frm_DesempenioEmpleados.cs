@@ -33,9 +33,24 @@ namespace Desempeño
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Puntaje: PT = Puntos Totales. PC = Puntos Categorías. TC = Total Categoria. " +
-                "Categorías: MDE = Muy debajo de las Expectativas. DE = Debajo de las Expectativas. " +
-                "AE = Alcanza Expectativas. ME = Mejora Expectativas. S = Sobresaliente.");
+            string ruta = "";
+            string indice = "";
+
+            OdbcDataReader mostrarEmpleado = logic.consultaayuda("19");
+            try
+            {
+                while (mostrarEmpleado.Read())
+                {
+                    ruta = mostrarEmpleado.GetString(1);
+                    indice = mostrarEmpleado.GetString(2);
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+            Help.ShowHelp(this, ruta, indice);
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
