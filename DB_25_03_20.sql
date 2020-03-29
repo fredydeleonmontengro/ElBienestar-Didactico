@@ -129,7 +129,33 @@ LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `concepto`
+--
 
+DROP TABLE IF EXISTS `concepto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `concepto` (
+  `pkcodigoconcepto` int NOT NULL,
+  `nombreconcepto` varchar(45) DEFAULT NULL,
+  `tipo_concepto` tinyint DEFAULT NULL,
+  `saldo` double DEFAULT NULL,
+  `tipo_accion` tinyint DEFAULT NULL,
+  `estado` tinyint DEFAULT NULL,
+  PRIMARY KEY (`pkcodigoconcepto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `concepto`
+--
+
+LOCK TABLES `concepto` WRITE;
+/*!40000 ALTER TABLE `concepto` DISABLE KEYS */;
+INSERT INTO `concepto` VALUES (1,'SD',1,12,1,1),(2,'Casa',1,12,1,1);
+/*!40000 ALTER TABLE `concepto` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `departamentos`
@@ -552,10 +578,10 @@ CREATE TABLE `reuniones` (
   `fkcodigoempleado` int NOT NULL,
   `nombrereunion` varchar(45) DEFAULT NULL,
   `descripcion` varchar(45) DEFAULT NULL,
-  `fechainicio` time DEFAULT NULL,
-  `fechafinal` time DEFAULT NULL,
-  `horainicio` datetime DEFAULT NULL,
-  `horafinal` datetime DEFAULT NULL,
+  `fechainicio` datetime DEFAULT NULL,
+  `fechafinal` datetime DEFAULT NULL,
+  `horainicio` time DEFAULT NULL,
+  `horafinal` time DEFAULT NULL,
   `cantidadempleados` int DEFAULT NULL,
   `estado` tinyint DEFAULT NULL,
   PRIMARY KEY (`pkcodigoreuniones`),
@@ -900,4 +926,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-24 22:12:06
+-- Dump completed on 2020-03-25 21:01:15

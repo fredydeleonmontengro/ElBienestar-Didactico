@@ -129,6 +129,20 @@ namespace CapaDiseño.Mantenimientos
             }
         }
 
-      
+        private void Txt_Cod_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cbo_tipooperacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cbo_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cbo_estado.Items.Add("1");
+            Cbo_estado.Items.Add("0");
+        }
     }
 }

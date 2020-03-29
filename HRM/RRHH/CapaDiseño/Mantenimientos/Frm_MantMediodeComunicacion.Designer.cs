@@ -144,6 +144,7 @@
             this.Cbo_Estado.Name = "Cbo_Estado";
             this.Cbo_Estado.Size = new System.Drawing.Size(182, 21);
             this.Cbo_Estado.TabIndex = 9;
+            this.Cbo_Estado.SelectedIndexChanged += new System.EventHandler(this.Cbo_Estado_SelectedIndexChanged);
             // 
             // Label_Estado
             // 
@@ -208,6 +209,7 @@
             this.Txt_ID.Name = "Txt_ID";
             this.Txt_ID.Size = new System.Drawing.Size(182, 20);
             this.Txt_ID.TabIndex = 1;
+            this.Txt_ID.TextChanged += new System.EventHandler(this.Txt_ID_TextChanged);
             // 
             // Label_IDMC
             // 

@@ -23,6 +23,20 @@ namespace CapaDiseño.Procesos
             InitializeComponent();
         }
         Logica logic = new Logica();
+        public void Guardar()
+
+        {
+        
+        string fechainicial = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+        string fechafinal = dateTimePicker3.Value.ToString("yyyy-MM-dd");
+            string codigopoliza = Convert.ToString(textBox1.Text);
+            string codigonomina = Convert.ToString(textBox3.Text);
+
+       OdbcDataReader cita = logic.Guardarpoliza(codigopoliza, codigonomina, fechainicial, fechafinal);
+       
+          
+
+        }
         public void Mostrarcuentasporpagar()
         {
 
@@ -186,8 +200,8 @@ namespace CapaDiseño.Procesos
 
         private void btn_minimizar_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
 
-          
         }
 
 
@@ -197,12 +211,12 @@ namespace CapaDiseño.Procesos
 
         private void btn_Ayuda_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("Por el momento se encuentra en desarollo");
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            
+            this.Dispose();
         }
         public void actualizar()
         {
@@ -234,12 +248,14 @@ namespace CapaDiseño.Procesos
             sueldos();
             Mostrarcuentas();
             Mostrarcuentasporpagar();
+           
 
             System.Threading.Thread.Sleep(30);
             MessageBox.Show("POLIZA GUARDADA");
             sumasiguales();
             System.Threading.Thread.Sleep(40);
             compasuma();
+            Guardar();
         }
         private void sumasiguales()
         {
@@ -277,12 +293,14 @@ namespace CapaDiseño.Procesos
             sueldos();
             Mostrarcuentas();
             Mostrarcuentasporpagar();
+          
 
             System.Threading.Thread.Sleep(30);
-            MessageBox.Show("POLIZA GUARDADA");
+          
             sumasiguales();
             System.Threading.Thread.Sleep(40);
             compasuma();
+            Guardar();
         }
     }
 }

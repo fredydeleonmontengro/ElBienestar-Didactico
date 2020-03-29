@@ -443,6 +443,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Pnl_nombreForm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_polizaNomina";
             this.Text = "Frm_polizaNomina";
             this.Load += new System.EventHandler(this.Frm_polizaNomina_Load);

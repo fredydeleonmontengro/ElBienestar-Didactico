@@ -30,23 +30,6 @@ namespace CapaDatos
             }
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-        public OdbcDataReader Insertarcuentas(string sCodigocuenta, string scuenta, string smonto)
-        {
-            try
-            {
-                cn.conexionbd();
-                string consulta = "insert into cuentas_contables values(" + sCodigocuenta + ", '" + scuenta + "' ,'" + smonto + "');";
-                comm = new OdbcCommand(consulta, cn.conexionbd());
-                OdbcDataReader mostrar = comm.ExecuteReader();
-                return mostrar;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                return null;
-            }
-        }
-        //--
 
         //------------------------------------------------------------------------------------------------------UPDATE-------------------------------------------------------//
         public OdbcDataReader modificarconcepto(string sCodigo, string sNombre, string sTipoconcepto, string ssaldo, string stipoaccion, string sestado)
@@ -131,13 +114,13 @@ namespace CapaDatos
             try
             {
                 cn.conexionbd();
-                string consulta = "insert into tbl_solicitud_empleado_encabezado values(" + scampo + ',' + creador + ',' + tipo + ',' + "'" + fecha + "' , 1);";
+                string consulta = "insert into tbl_solicitud_empleado_encabezado values("+ scampo + ',' + creador + ',' + tipo + ',' + "'"+ fecha +"' , 1);";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 string consulta2 = "insert into tbl_solicitud_empleado_detalle values(" + scampo + ',' + p2 + ',' + s2 + ',' + b2 + ',' + es2 + ',' + g2 + ',' + c2 + ',' + "'" + extras + "',1);";
                 comm = new OdbcCommand(consulta2, cn.conexionbd());
                 OdbcDataReader mostrar2 = comm.ExecuteReader();
-                Console.WriteLine("Devuelve " + mostrar);
+                Console.WriteLine("Devuelve "+mostrar);
                 return mostrar;
             }
             catch (Exception err)
@@ -153,7 +136,7 @@ namespace CapaDatos
             try
             {
                 cn.conexionbd();
-                string consulta = "insert into perfil_encabezado values(" + scampo + ',' + puesto + ",1);";
+                string consulta = "insert into perfil_encabezado values(" + scampo +  ',' + puesto  +",1);";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 string consulta2 = "insert into perfil_detalle values(" + scampo + ',' + p2 + ',' + s2 + ',' + b2 + ',' + es2 + ',' + g2 + ',' + c2 + ',' + "'" + extras + "',1);";
@@ -174,10 +157,10 @@ namespace CapaDatos
             try
             {
                 cn.conexionbd();
-                string consulta = "UPDATE perfil_encabezado set fkcodigopuesto='" + puesto + "' where pkcodperfil='" + scampo + "';";
+                string consulta = "UPDATE perfil_encabezado set fkcodigopuesto='" + puesto  + "' where pkcodperfil='" + scampo + "';";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
-                string consulta2 = "UPDATE perfil_detalle set fkcodperfil='" + scampo + "', primaria='" + p2 + "', secundaria='" + s2 + "', bachillerato='" + b2 + "', estudiante_U='" + es2 + "', graduado_U='" + g2 + "', curso_extra='" + c2 + "', descripcion_curso='" + extras + "' where fkcodperfil='" + scampo + "';";
+                string consulta2 = "UPDATE perfil_detalle set fkcodperfil='" + scampo + "', primaria='" + p2 + "', secundaria='" + s2 + "', bachillerato='" + b2 + "', estudiante_U='" + es2 + "', graduado_U='" + g2 +"', curso_extra='" + c2 + "', descripcion_curso='" + extras  + "' where fkcodperfil='" + scampo + "';";
                 comm = new OdbcCommand(consulta2, cn.conexionbd());
                 OdbcDataReader mostrar2 = comm.ExecuteReader();
                 return mostrar;
@@ -508,7 +491,7 @@ namespace CapaDatos
             try
             {
                 cn.conexionbd();
-                string consultaGraAsis = "SELECT * FROM tbl_solicitud_empleado_encabezado WHERE pksolicitudempleado=" + COD + ";";
+                string consultaGraAsis = "SELECT * FROM tbl_solicitud_empleado_encabezado WHERE pksolicitudempleado="+ COD+";";
                 comm = new OdbcCommand(consultaGraAsis, cn.conexionbd());
                 OdbcDataReader mostrarResultados = comm.ExecuteReader();
                 return mostrarResultados;
@@ -597,7 +580,7 @@ namespace CapaDatos
             try
             {
                 cn.conexionbd();
-                string consulta = "insert into tbl_curriculums values(" + scampo + ',' + nombre + ',' + apellido + ',' + numero + ',' + direccion + ',' + correo + ',' + p2 + ',' + s2 + ',' + b2 + ',' + es2 + ',' + g2 + ',' + c2 + ',' + extras + ',' + experiencia + ',' + sueldo + ',' + solicitud + ",1);";
+                string consulta = "insert into tbl_curriculums values(" + scampo + ",'" + nombre + "','" + apellido + "','" + numero + "','" + direccion + "','" + correo + "'," + p2 + ',' + s2 + ',' + b2 + ',' + es2 + ',' + g2 + ',' + c2 + ",'" + extras + "','" + experiencia + "'," + sueldo + "," + solicitud + ",1);";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -646,12 +629,12 @@ namespace CapaDatos
         }
 
         //---------------------------------------------------------------------------DESEMPEÑO-------------------------------------------------------------------------//
-        public OdbcDataReader InsertarKpi(string fechaEvaluacion, string totalEmpleado, string desempeño)
+        public OdbcDataReader InsertarKpi(string fechaEvaluacion, string desempeño)
         {
             try
             {
                 cn.conexionbd();
-                string consulta = "INSERT INTO tbl_kpi values (0," + fechaEvaluacion + totalEmpleado + desempeño + " ) ;";
+                string consulta = "INSERT INTO tbl_kpi values (0," + fechaEvaluacion + desempeño + " ) ;";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -677,7 +660,7 @@ namespace CapaDatos
             {
                 Console.WriteLine(err.Message);
                 return null;
-            }
+            }  
         }
 
         public OdbcDataReader InsertarMeta(string nombreMeta, string tipoMeta, string descrip, string comple, string fechaMeta, string pun)
@@ -686,6 +669,23 @@ namespace CapaDatos
             {
                 cn.conexionbd();
                 string consulta = "INSERT INTO metas values (0," + nombreMeta + tipoMeta + descrip + comple + fechaMeta + pun + ");";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader InsertarKpiTotal(string totalKpi)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "INSERT INTO metas values (0," + totalKpi + ");";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -720,7 +720,7 @@ namespace CapaDatos
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
         //------------------------------------------------------------------------------------- INGRESO CONTROL ASISTENCIA ------------------------------------------------------------------------------------------------------------------------------------
-        public OdbcDataReader InsertarControlAsistencia(string sCodigoEmpleado, string sNombre, string sApellido, string sFechaIngreso, string sFechaSalida, string sHoraIngreso, string sHoraSalida, float fHorasTotales)
+        public OdbcDataReader InsertarControlAsistencia(string sCodigoEmpleado, string sNombre, string sApellido, string sFechaIngreso,string sFechaSalida, string sHoraIngreso,string  sHoraSalida, float fHorasTotales )
         {
             int idisponible = 1;
             try
@@ -1134,12 +1134,14 @@ namespace CapaDatos
                 return null;
             }
         }
-        public OdbcDataReader rellenoconcepto()
+
+        // ESTADO
+        public OdbcDataReader consultarestado(Boolean estado)
         {
             try
             {
                 cn.conexionbd();
-                string consulta = "SELECT pknombreconcepto,sum(Total_monto) FROM mydb.conceptos_empleado GROUP BY pknombreconcepto;";
+                string consulta = "SELECT estado FROM empleado;";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -1150,12 +1152,12 @@ namespace CapaDatos
                 return null;
             }
         }
-        public OdbcDataReader consultanomina()
+        public OdbcDataReader detallepolizas(string scuenta, string debe, string haber)
         {
             try
             {
                 cn.conexionbd();
-                string consulta = "SELECT max(pkcodigonomina),saldo_total FROM mydb.nomina_encabezado;";
+                string consulta = "insert into poliza_detalle values('" + scuenta + "','" + debe + "', '" + haber + "');";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -1166,54 +1168,7 @@ namespace CapaDatos
                 return null;
             }
         }
-        public OdbcDataReader rellenocuentas()
-        {
-            try
-            {
-                cn.conexionbd();
-                string consulta = "SELECT nombre_cuenta, monto FROM mydb.cuentas_contables;";
-                comm = new OdbcCommand(consulta, cn.conexionbd());
-                OdbcDataReader mostrar = comm.ExecuteReader();
-                return mostrar;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                return null;
-            }
-        }
-        public OdbcDataReader sumaconceptos()
-        {
-            try
-            {
-                cn.conexionbd();
-                string consulta = "SELECT sum(Total_monto) FROM mydb.conceptos_empleado;";
-                comm = new OdbcCommand(consulta, cn.conexionbd());
-                OdbcDataReader mostrar = comm.ExecuteReader();
-                return mostrar;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                return null;
-            }
-        }
-        public OdbcDataReader comp()
-        {
-            try
-            {
-                cn.conexionbd();
-                string consulta = "SELECT sum(Debe) FROM mydb.poliza_detalle;";
-                comm = new OdbcCommand(consulta, cn.conexionbd());
-                OdbcDataReader mostrar = comm.ExecuteReader();
-                return mostrar;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                return null;
-            }
-        }
+
         public OdbcDataReader conceptosempleados(string snombre, string smonto)
         {
             try
@@ -1230,12 +1185,13 @@ namespace CapaDatos
                 return null;
             }
         }
-        public OdbcDataReader detallepolizas(string  scuenta, string debe, string haber)
+
+        public OdbcDataReader comp()
         {
             try
             {
                 cn.conexionbd();
-                string consulta = "insert into poliza_detalle values('" +scuenta+ "','" +debe+ "', '" +haber+ "');";
+                string consulta = "SELECT sum(Debe) FROM mydb.poliza_detalle;";
                 comm = new OdbcCommand(consulta, cn.conexionbd());
                 OdbcDataReader mostrar = comm.ExecuteReader();
                 return mostrar;
@@ -1246,5 +1202,248 @@ namespace CapaDatos
                 return null;
             }
         }
+
+        public OdbcDataReader sumaconceptos()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT sum(Total_monto) FROM mydb.conceptos_empleado;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader rellenocuentas()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT nombre_cuenta, monto FROM mydb.cuentas_contables;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader consultanomina()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT max(pkcodigonomina),saldo_total FROM mydb.nomina_encabezado;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader rellenoconcepto()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT pknombreconcepto,sum(Total_monto) FROM mydb.conceptos_empleado GROUP BY pknombreconcepto;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Insertarcuentas(string sCodigocuenta, string scuenta, string smonto)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "insert into cuentas_contables values(" + sCodigocuenta + ", '" + scuenta + "' ,'" + smonto + "');";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+        public OdbcDataReader Detallepolizas(string scuenta, string debe, string haber)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "insert into poliza_detalle values('" + scuenta + "','" + debe + "', '" + haber + "');";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Conceptosempleados(string snombre, string smonto)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "insert into conceptos_empleado values('" + snombre + "', '" + smonto + "');";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Comp()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT sum(Debe) FROM mydb.poliza_detalle;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Sumaconceptos()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT sum(Total_monto) FROM mydb.conceptos_empleado;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Rellenocuentas()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT nombre_cuenta, monto FROM mydb.cuentas_contables;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Consultanominas()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT max(pkcodigonomina),saldo_total FROM mydb.nomina_encabezado;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public OdbcDataReader Rellenoconcepto()
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "SELECT pknombreconcepto,sum(Total_monto) FROM mydb.conceptos_empleado GROUP BY pknombreconcepto;";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+        public OdbcDataReader Insertarpoliza(string codigopoliza, string codigonomina, string fechainicial, string fechafinal)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "insert into poliza_encabezado values(" + codigopoliza + ", '" + codigonomina + "' ,'" + fechainicial + "','" + fechafinal + "');";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+        public OdbcDataReader insertarcuentas(string sCodigocuenta, string scuenta, string smonto)
+        {
+            try
+            {
+                cn.conexionbd();
+                string consulta = "insert into cuentas_contables values(" + sCodigocuenta + ", '" + scuenta + "' ,'" + smonto + "');";
+                comm = new OdbcCommand(consulta, cn.conexionbd());
+                OdbcDataReader mostrar = comm.ExecuteReader();
+                return mostrar;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+
+
     }
+   
+
+
+
 }
+

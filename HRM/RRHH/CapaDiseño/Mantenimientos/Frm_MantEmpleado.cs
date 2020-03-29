@@ -51,6 +51,15 @@ namespace CapaDiseño.Mantenimientos
             InitializeComponent();
             obtenerip();
             suser = susuario;
+
+            Txt_PrimerApellido.Enabled = false;
+            Txt_SegundoNombre.Enabled = false;
+            Txt_PrimerApellido.Enabled = false;
+            Txt_SegundoNombre.Enabled = false;
+            Txt_Telefono.Enabled = false;
+            Txt_Celular.Enabled = false;
+            Txt_email.Enabled = false;
+            Txt_Direccion.Enabled = false;
         }
 
         private void Pnl_nombreForm_Paint(object sender, PaintEventArgs e)
@@ -195,6 +204,13 @@ namespace CapaDiseño.Mantenimientos
         {
             Frm_consultaEmpleado concep = new Frm_consultaEmpleado();
             concep.ShowDialog();
+        }
+
+        private void Cbo_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cbo_estado.Items.Add("1");
+            Cbo_estado.Items.Add("0");
+
         }
     }
 }

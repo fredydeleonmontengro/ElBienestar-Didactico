@@ -66,8 +66,8 @@
             this.lbl_subtotaldeducciones = new System.Windows.Forms.Label();
             this.Txt_SubtotalDeducciones = new System.Windows.Forms.TextBox();
             this.btn_generarnomina = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Pnl_nombreForm.SuspendLayout();
             this.Gpb_nominaencabezado.SuspendLayout();
             this.Gpb_Detallenominal.SuspendLayout();
@@ -83,7 +83,7 @@
             this.Pnl_nombreForm.Controls.Add(this.lbl_procesonominal);
             this.Pnl_nombreForm.Controls.Add(this.btn_cerrar);
             this.Pnl_nombreForm.Location = new System.Drawing.Point(-2, -1);
-            this.Pnl_nombreForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Pnl_nombreForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Pnl_nombreForm.Name = "Pnl_nombreForm";
             this.Pnl_nombreForm.Size = new System.Drawing.Size(982, 51);
             this.Pnl_nombreForm.TabIndex = 1;
@@ -94,7 +94,7 @@
             this.btn_Ayuda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Ayuda.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ayuda.Image")));
             this.btn_Ayuda.Location = new System.Drawing.Point(887, 12);
-            this.btn_Ayuda.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Ayuda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Ayuda.Name = "btn_Ayuda";
             this.btn_Ayuda.Size = new System.Drawing.Size(33, 31);
             this.btn_Ayuda.TabIndex = 6;
@@ -107,7 +107,7 @@
             this.btn_minimizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimizar.Image")));
             this.btn_minimizar.Location = new System.Drawing.Point(852, 12);
-            this.btn_minimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_minimizar.Name = "btn_minimizar";
             this.btn_minimizar.Size = new System.Drawing.Size(33, 31);
             this.btn_minimizar.TabIndex = 5;
@@ -132,7 +132,7 @@
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.Image")));
             this.btn_cerrar.Location = new System.Drawing.Point(925, 12);
-            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(33, 31);
             this.btn_cerrar.TabIndex = 4;
@@ -141,6 +141,8 @@
             // 
             // Gpb_nominaencabezado
             // 
+            this.Gpb_nominaencabezado.Controls.Add(this.textBox2);
+            this.Gpb_nominaencabezado.Controls.Add(this.textBox1);
             this.Gpb_nominaencabezado.Controls.Add(this.Txt_saldonominal);
             this.Gpb_nominaencabezado.Controls.Add(this.label2);
             this.Gpb_nominaencabezado.Controls.Add(this.Txt_Observaciones);
@@ -158,9 +160,9 @@
             this.Gpb_nominaencabezado.Controls.Add(this.lbl_codnominaenca);
             this.Gpb_nominaencabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gpb_nominaencabezado.Location = new System.Drawing.Point(21, 64);
-            this.Gpb_nominaencabezado.Margin = new System.Windows.Forms.Padding(2);
+            this.Gpb_nominaencabezado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Gpb_nominaencabezado.Name = "Gpb_nominaencabezado";
-            this.Gpb_nominaencabezado.Padding = new System.Windows.Forms.Padding(2);
+            this.Gpb_nominaencabezado.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Gpb_nominaencabezado.Size = new System.Drawing.Size(946, 142);
             this.Gpb_nominaencabezado.TabIndex = 2;
             this.Gpb_nominaencabezado.TabStop = false;
@@ -169,7 +171,7 @@
             // Txt_saldonominal
             // 
             this.Txt_saldonominal.Location = new System.Drawing.Point(592, 109);
-            this.Txt_saldonominal.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_saldonominal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_saldonominal.Name = "Txt_saldonominal";
             this.Txt_saldonominal.Size = new System.Drawing.Size(100, 23);
             this.Txt_saldonominal.TabIndex = 14;
@@ -187,7 +189,7 @@
             // Txt_Observaciones
             // 
             this.Txt_Observaciones.Location = new System.Drawing.Point(134, 115);
-            this.Txt_Observaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_Observaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_Observaciones.Name = "Txt_Observaciones";
             this.Txt_Observaciones.Size = new System.Drawing.Size(241, 23);
             this.Txt_Observaciones.TabIndex = 12;
@@ -208,7 +210,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkRed;
             this.button1.Location = new System.Drawing.Point(342, 64);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 34);
             this.button1.TabIndex = 10;
@@ -219,7 +221,7 @@
             // Txt_codempleado
             // 
             this.Txt_codempleado.Location = new System.Drawing.Point(224, 75);
-            this.Txt_codempleado.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_codempleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_codempleado.Name = "Txt_codempleado";
             this.Txt_codempleado.Size = new System.Drawing.Size(100, 23);
             this.Txt_codempleado.TabIndex = 9;
@@ -237,7 +239,7 @@
             // Dtp_fechafin
             // 
             this.Dtp_fechafin.Location = new System.Drawing.Point(608, 60);
-            this.Dtp_fechafin.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_fechafin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Dtp_fechafin.Name = "Dtp_fechafin";
             this.Dtp_fechafin.Size = new System.Drawing.Size(275, 23);
             this.Dtp_fechafin.TabIndex = 7;
@@ -255,7 +257,7 @@
             // Dtp_fechainicio
             // 
             this.Dtp_fechainicio.Location = new System.Drawing.Point(608, 26);
-            this.Dtp_fechainicio.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_fechainicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Dtp_fechainicio.Name = "Dtp_fechainicio";
             this.Dtp_fechainicio.Size = new System.Drawing.Size(275, 23);
             this.Dtp_fechainicio.TabIndex = 5;
@@ -274,7 +276,7 @@
             // Txt_tiponomina
             // 
             this.Txt_tiponomina.Location = new System.Drawing.Point(342, 26);
-            this.Txt_tiponomina.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_tiponomina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_tiponomina.Name = "Txt_tiponomina";
             this.Txt_tiponomina.Size = new System.Drawing.Size(98, 23);
             this.Txt_tiponomina.TabIndex = 3;
@@ -292,7 +294,7 @@
             // Txt_CodEncabezado
             // 
             this.Txt_CodEncabezado.Location = new System.Drawing.Point(88, 29);
-            this.Txt_CodEncabezado.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_CodEncabezado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_CodEncabezado.Name = "Txt_CodEncabezado";
             this.Txt_CodEncabezado.Size = new System.Drawing.Size(98, 23);
             this.Txt_CodEncabezado.TabIndex = 1;
@@ -313,9 +315,9 @@
             this.Gpb_Detallenominal.Controls.Add(this.Dgv_empleadoscontables);
             this.Gpb_Detallenominal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gpb_Detallenominal.Location = new System.Drawing.Point(21, 226);
-            this.Gpb_Detallenominal.Margin = new System.Windows.Forms.Padding(2);
+            this.Gpb_Detallenominal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Gpb_Detallenominal.Name = "Gpb_Detallenominal";
-            this.Gpb_Detallenominal.Padding = new System.Windows.Forms.Padding(2);
+            this.Gpb_Detallenominal.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Gpb_Detallenominal.Size = new System.Drawing.Size(947, 246);
             this.Gpb_Detallenominal.TabIndex = 3;
             this.Gpb_Detallenominal.TabStop = false;
@@ -325,7 +327,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(28, 108);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -344,14 +346,13 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.Dgv_empleadoscontables.Location = new System.Drawing.Point(28, 20);
-            this.Dgv_empleadoscontables.Margin = new System.Windows.Forms.Padding(2);
+            this.Dgv_empleadoscontables.Location = new System.Drawing.Point(28, 21);
+            this.Dgv_empleadoscontables.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Dgv_empleadoscontables.Name = "Dgv_empleadoscontables";
             this.Dgv_empleadoscontables.RowHeadersWidth = 51;
             this.Dgv_empleadoscontables.RowTemplate.Height = 24;
             this.Dgv_empleadoscontables.Size = new System.Drawing.Size(890, 82);
             this.Dgv_empleadoscontables.TabIndex = 0;
-            this.Dgv_empleadoscontables.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_empleadoscontables_CellContentClick);
             // 
             // Column1
             // 
@@ -424,7 +425,7 @@
             // 
             this.Txt_SubtotalPercepciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_SubtotalPercepciones.Location = new System.Drawing.Point(274, 496);
-            this.Txt_SubtotalPercepciones.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_SubtotalPercepciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_SubtotalPercepciones.Name = "Txt_SubtotalPercepciones";
             this.Txt_SubtotalPercepciones.Size = new System.Drawing.Size(112, 23);
             this.Txt_SubtotalPercepciones.TabIndex = 5;
@@ -444,7 +445,7 @@
             // 
             this.Txt_SubtotalDeducciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_SubtotalDeducciones.Location = new System.Drawing.Point(682, 496);
-            this.Txt_SubtotalDeducciones.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_SubtotalDeducciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_SubtotalDeducciones.Name = "Txt_SubtotalDeducciones";
             this.Txt_SubtotalDeducciones.Size = new System.Drawing.Size(112, 23);
             this.Txt_SubtotalDeducciones.TabIndex = 7;
@@ -455,7 +456,7 @@
             this.btn_generarnomina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_generarnomina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generarnomina.Location = new System.Drawing.Point(810, 549);
-            this.btn_generarnomina.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_generarnomina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_generarnomina.Name = "btn_generarnomina";
             this.btn_generarnomina.Size = new System.Drawing.Size(146, 32);
             this.btn_generarnomina.TabIndex = 8;
@@ -463,29 +464,27 @@
             this.btn_generarnomina.UseVisualStyleBackColor = false;
             this.btn_generarnomina.Click += new System.EventHandler(this.Btn_generarnomina_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(840, 496);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Visible = false;
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(840, 522);
+            this.textBox2.Location = new System.Drawing.Point(749, 114);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.TabIndex = 16;
             this.textBox2.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(749, 88);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.Visible = false;
             // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 592);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_generarnomina);
             this.Controls.Add(this.Txt_SubtotalDeducciones);
             this.Controls.Add(this.lbl_subtotaldeducciones);
@@ -495,7 +494,7 @@
             this.Controls.Add(this.Gpb_nominaencabezado);
             this.Controls.Add(this.Pnl_nombreForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Frm_Nomina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nomina";
@@ -550,7 +549,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

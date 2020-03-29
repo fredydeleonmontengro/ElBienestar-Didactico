@@ -20,14 +20,9 @@ namespace CapaLogica
             return sn.Insertarconcepto(sCodigo, sNombre, sTipoconcepto, ssaldo, stipoaccion, sestado);
         }
 
-        public OdbcDataReader Insertarcuenta(string sCodigocuenta, string scuenta, string smonto)
+        public OdbcDataReader Guardarpoliza(double codigopoliza, double codigonomina, string fechainicial, string fechafinal)
         {
-            return sn.Insertarcuentas(sCodigocuenta, scuenta, smonto);
-        }
-        
-        public OdbcDataReader detallepoliza(string snombre,string smonto)
-        {
-            return sn.conceptosempleados(snombre, smonto);
+            throw new NotImplementedException();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -84,11 +79,6 @@ namespace CapaLogica
         public OdbcDataReader ConsultaLogicaPreseleccionComparacion(string id)
         {
             return sn.ConsultaSeleccionComparacion(id);
-        }
-
-        public OdbcDataReader detallepoliza(string text1, string text2, string text3, string text4)
-        {
-            throw new NotImplementedException();
         }
 
         public OdbcDataReader ConsultaSeleccionComparacionAceptados(string id)
@@ -216,9 +206,9 @@ namespace CapaLogica
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
         //---------------------------------------------------------------------------DESEMPEÑO-------------------------------------------------------------------------//
         //--------------------------------------------------------INSERTAR KPI-------------------------------------------------------//
-        public OdbcDataReader InsertarKpi(string fechaEvaluacion, string totalEmpleado, string desempeño)
+        public OdbcDataReader InsertarKpi(string fechaEvaluacion, string desempeño)
         {
-            return sn.InsertarKpi(fechaEvaluacion, totalEmpleado, desempeño);
+            return sn.InsertarKpi(fechaEvaluacion, desempeño);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
         //--------------------------------------------------------INSERTAR CATEGORIA-------------------------------------------------------//
@@ -231,6 +221,12 @@ namespace CapaLogica
         public OdbcDataReader InsertarMeta(string nombreMeta, string tipoMeta, string descrip, string comple, string fechaMeta, string pun)
         {
             return sn.InsertarMeta(nombreMeta, tipoMeta, descrip, comple, fechaMeta, pun);
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        //--------------------------------------------------------INSERTAR TOTAL KPI-------------------------------------------------------//
+        public OdbcDataReader InsertarKpiTotal(string totalKpi)
+        {
+            return sn.InsertarKpiTotal(totalKpi);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
         //pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
@@ -348,6 +344,32 @@ namespace CapaLogica
         {
             return sn.Consultanomina();
         }
+
+        public OdbcDataReader ConsultaTotalKpi(string id)
+        {
+            return sn.ConsultaTotalKpi(id);
+        }
+
+        public OdbcDataReader consultarestado(Boolean estado)
+        {
+            return sn.consultarestado(estado);
+        }
+        public OdbcDataReader Insertarcuenta(string sCodigocuenta, string scuenta, string smonto)
+        {
+            return sn.Insertarcuentas(sCodigocuenta, scuenta, smonto);
+        }
+
+        public OdbcDataReader detallepoliza(string snombre, string smonto)
+        {
+            return sn.conceptosempleados(snombre, smonto);
+        }
+
+
+
+        public OdbcDataReader consultarnominas()
+        {
+            return sn.Consultanominas();
+        }
         public OdbcDataReader rellenoconceptos()
         {
             return sn.rellenoconcepto();
@@ -364,22 +386,21 @@ namespace CapaLogica
         {
             return sn.sumaconceptos();
         }
-        public OdbcDataReader detallepolizass( string  scuenta, string debe, string haber)
+        public OdbcDataReader detallepolizass(string scuenta, string debe, string haber)
         {
-            return sn.detallepolizas(scuenta , debe , haber );
+            return sn.detallepolizas(scuenta, debe, haber);
         }
 
         public OdbcDataReader comparacion()
         {
-            return sn.comp( );
+            return sn.comp();
         }
 
-
-
-        public OdbcDataReader ConsultaTotalKpi(string id)
+        public OdbcDataReader Guardarpoliza(string codigopoliza, string codigonomina, string fechainicial, string fechafinal)
         {
-            return sn.ConsultaTotalKpi(id);
+            return sn.Insertarpoliza(codigopoliza, codigonomina , fechainicial, fechafinal);
         }
+
     }
 }
 

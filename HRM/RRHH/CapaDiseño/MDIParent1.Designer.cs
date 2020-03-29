@@ -380,7 +380,7 @@
             // 
             this.polizaNominaToolStripMenuItem.Name = "polizaNominaToolStripMenuItem";
             this.polizaNominaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.polizaNominaToolStripMenuItem.Text = "Poliza nomina";
+            this.polizaNominaToolStripMenuItem.Text = "Poliza Nomina";
             this.polizaNominaToolStripMenuItem.Click += new System.EventHandler(this.polizaNominaToolStripMenuItem_Click);
             // 
             // MDIParent1

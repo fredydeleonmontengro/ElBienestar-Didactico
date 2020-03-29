@@ -58,6 +58,7 @@
             this.btn_Ayuda.Size = new System.Drawing.Size(33, 31);
             this.btn_Ayuda.TabIndex = 45;
             this.btn_Ayuda.UseVisualStyleBackColor = false;
+            this.btn_Ayuda.Click += new System.EventHandler(this.btn_Ayuda_Click);
             // 
             // btn_minimizar
             // 
@@ -71,6 +72,7 @@
             this.btn_minimizar.Size = new System.Drawing.Size(33, 31);
             this.btn_minimizar.TabIndex = 44;
             this.btn_minimizar.UseVisualStyleBackColor = false;
+            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
             // 
             // Btn_Ingresar
             // 
@@ -191,6 +193,7 @@
             this.btn_cerrar.Size = new System.Drawing.Size(33, 31);
             this.btn_cerrar.TabIndex = 46;
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // Frm_MantIngresocuentascontables
             // 
@@ -203,6 +206,7 @@
             this.Controls.Add(this.Gpb_IngresoDatos);
             this.Controls.Add(this.Lbl_IngresoSansion);
             this.Controls.Add(this.Pic_Barra);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_MantIngresocuentascontables";
             this.Text = "Frm_MantIngresocuentascontables";
             this.Gpb_IngresoDatos.ResumeLayout(false);

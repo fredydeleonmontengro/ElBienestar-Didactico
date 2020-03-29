@@ -12,18 +12,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.NetworkInformation;
-using CapaDatos;
+
 
 namespace CapaDiseño.Procesos
 {
     public partial class Frm_Nomina : Form
     {
-        Logica logic = new Logica();
+       Logica logic = new Logica();
 
         string slocalIP;
         string smacAddresses;
         string suser;
-
+          
         public void obtenerip()
         {
             IPHostEntry host;
@@ -45,7 +45,17 @@ namespace CapaDiseño.Procesos
                 }
             }
         }
+        public void hackeardatos()
 
+        {
+            foreach (DataGridViewRow row in Dgv_empleadoscontables.Rows)
+            {
+                textBox1.Text = Convert.ToString(row.Cells["Column4"].Value);
+                textBox2.Text = Convert.ToString(row.Cells["Column8"].Value);
+                OdbcDataReader cita = logic.detallepoliza(textBox1.Text, textBox2.Text);
+
+            }
+        }
         public Frm_Nomina(String susuario)
         {
             InitializeComponent();
@@ -62,13 +72,13 @@ namespace CapaDiseño.Procesos
                 {
                     if (Convert.ToString(row.Cells["Column7"].Value) == "Suma")
                     {
-
-
+                       
+                 
                         row.Cells["Column8"].Value = Convert.ToDouble(row.Cells["Column3"].Value) + Convert.ToDouble(row.Cells["Column5"].Value);
                     }
                     if (Convert.ToString(row.Cells["Column7"].Value) == "Multiplicacion")
                     {
-
+                    
                         row.Cells["Column8"].Value = Convert.ToDouble(row.Cells["Column3"].Value) * Convert.ToDouble(row.Cells["Column5"].Value);
                     }
 
@@ -78,12 +88,12 @@ namespace CapaDiseño.Procesos
                 {
                     if (Convert.ToString(row.Cells["Column7"].Value) == "Suma")
                     {
-
+                       
                         row.Cells["Column8"].Value = Convert.ToDouble(row.Cells["Column3"].Value) + Convert.ToDouble(row.Cells["Column5"].Value);
                     }
                     if (Convert.ToString(row.Cells["Column7"].Value) == "Multiplicacion")
                     {
-
+                      
                         row.Cells["Column8"].Value = Convert.ToDouble(row.Cells["Column3"].Value) * Convert.ToDouble(row.Cells["Column5"].Value);
                     }
                 }
@@ -147,9 +157,8 @@ namespace CapaDiseño.Procesos
         private void Btn_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-            
-
-
+           
+           
 
         }
 
@@ -167,17 +176,6 @@ namespace CapaDiseño.Procesos
             {
                 Txt_codempleado.Text = concep.Dgv_consultaEmpleado.Rows[concep.Dgv_consultaEmpleado.CurrentRow.Index].
                       Cells[0].Value.ToString();
-            }
-        }
-        public void hackeardatos()
-
-        {
-          foreach(DataGridViewRow row in Dgv_empleadoscontables.Rows)
-            {
-                textBox1.Text = Convert.ToString(row.Cells["Column4"].Value);
-                textBox2.Text = Convert.ToString(row.Cells["Column8"].Value);
-                OdbcDataReader cita = logic.detallepoliza(textBox1.Text,textBox2.Text);
-
             }
         }
 
@@ -271,10 +269,6 @@ namespace CapaDiseño.Procesos
 
         }
 
-        private void Dgv_empleadoscontables_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
     }
 
